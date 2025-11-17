@@ -105,7 +105,6 @@
             "networkmanager"
             "audio"
             "video"
-            "docker"
         ];
         shell = pkgs.bash;
     };
@@ -161,6 +160,10 @@
 
     virtualisation.docker = {
         enable = true;
+        rootless = {
+            enable = true;
+            setSocketVariable = true;
+        };
     };
 
     # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

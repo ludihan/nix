@@ -10,7 +10,8 @@ spawn-at-startup "nm-applet"
 // spawn-at-startup "gsettings" "set" "org.gnome.desktop.interface" "icon-theme" "Obsidian-Sand"
 // spawn-at-startup "gsettings" "set" "org.gnome.desktop.interface" "cursor-theme" "Adwaita"
 // spawn-at-startup "gsettings" "set" "org.gnome.desktop.interface" "color-scheme" "prefer-dark"
-spawn-sh-at-startup "swaybg -i ~/.config/home-manager/bg -c 262626"
+// spawn-sh-at-startup "swaybg -i ~/.config/home-manager/bg -c 262626"
+spawn-sh-at-startup "swaybg -c 222222"
 spawn-sh-at-startup "batsignal -b -w 30 -c 15 -d 5 -m 1 -I aefjlaksjd"
 
 output "HDMI-A-2" {
@@ -61,9 +62,9 @@ layout {
 //      active-color "#C9B990"
 //  }
 
-    background-color "transparent"
+    // background-color "transparent"
 
-    // background-color "#262626"
+    background-color "#222222"
 
     tab-indicator {
         width 10
@@ -325,7 +326,7 @@ binds {
     Mod+Ctrl+8 { move-window-to-workspace 8; }
     Mod+Ctrl+9 { move-window-to-workspace 9; }
 
-    Mod+Tab { focus-workspace-previous; }
+    Mod+grave { focus-workspace-previous; }
 
     Mod+Comma  { consume-window-into-column; }
     Mod+Period { expel-window-from-column; }
@@ -373,5 +374,34 @@ binds {
     }
     Mod+B {
         spawn-sh "~/.local/share/cargo/bin/woomer";
+    }
+}
+
+/-recent-windows {
+    // off
+    open-delay-ms 150
+
+    highlight {
+        active-color "#999999ff"
+        urgent-color "#ff9999ff"
+        padding 30
+        corner-radius 0
+    }
+
+    previews {
+        max-height 480
+        max-scale 0.5
+    }
+
+    binds {
+        Alt+Tab         { next-window; }
+        Alt+Shift+Tab   { previous-window; }
+        Alt+grave       { next-window     filter="app-id"; }
+        Alt+Shift+grave { previous-window filter="app-id"; }
+
+        Mod+Tab         { next-window; }
+        Mod+Shift+Tab   { previous-window; }
+        Mod+grave       { next-window     filter="app-id"; }
+        Mod+Shift+grave { previous-window filter="app-id"; }
     }
 }

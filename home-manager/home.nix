@@ -74,6 +74,11 @@ in
             export PATH=$PATH:$GOPATH/bin
         '';
     };
+    programs.nushell = {
+        enable = true;
+        configFile.source = "${inputs.self}/config/nushell/config.nu";
+    };
+    programs.carapace.enable = true;
 
     home = {
         username = "ludihan";
@@ -131,12 +136,11 @@ in
         uv
         blender
         vivid
-        carapace
         firefox
         steam 
         osu-lazer-bin
         docker-compose
-        nushell
+        docker-buildx
         hyprpicker
         brightnessctl
         imv
@@ -391,7 +395,7 @@ in
             niri.source     = link "niri";
             lf.source       = link "lf";
             npm.source      = link "npm";
-            nushell.source  = link "nushell";
+            # nushell.source  = link "nushell";
             # git.source      = link "git";
         };
     xdg.userDirs = {
