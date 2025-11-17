@@ -154,6 +154,7 @@ in
         unzip
         unrar
         zip
+        xarchiver
     ];
 
     programs.neovim = {
