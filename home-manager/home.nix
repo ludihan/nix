@@ -159,6 +159,7 @@ in
         unrar
         zip
         xarchiver
+        sunvox
     ];
 
     programs.neovim = {
