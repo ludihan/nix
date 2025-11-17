@@ -122,13 +122,16 @@
             jack.enable = true;
         };
         automatic-timezoned.enable = true;
+        gnome.gnome-keyring.enable = true;
     };
+    security.polkit.enable = true;
     services.gvfs.enable = true;
 
 
     programs.nix-ld.enable = true;
     xdg.portal = {
         enable = true;
+        xdgOpenUsePortal = true;
     };
 
     # not present in home manager

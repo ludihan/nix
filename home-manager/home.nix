@@ -135,7 +135,6 @@ in
         firefox
         steam 
         osu-lazer-bin
-        gh
         docker-compose
         nushell
         hyprpicker
@@ -147,7 +146,6 @@ in
         kdePackages.kdenlive
         love
         mednafen
-        git
         swaybg
         lf
         pavucontrol
@@ -164,6 +162,28 @@ in
         viAlias = true;
         vimAlias = true;
         vimdiffAlias = true;
+    };
+    programs.gh = {
+        enable = true;
+        gitCredentialHelper = {
+            enable = true;
+        };
+    };
+    programs.git = {
+        enable = true;
+        settings.user = {
+            name = "ludihan";
+            email = "65617704+ludihan@users.noreply.github.com";
+            init = {
+                defaultBranch = "main";
+            };
+            pull = {
+                rebase = true;
+            };
+            core = {
+                autocrlf = "input";
+            };
+        };
     };
     programs.discord.enable = true;
     programs.home-manager.enable = true;
@@ -371,7 +391,7 @@ in
             lf.source       = link "lf";
             npm.source      = link "npm";
             nushell.source  = link "nushell";
-            git.source      = link "git";
+            # git.source      = link "git";
         };
     xdg.userDirs = {
         enable = true;
