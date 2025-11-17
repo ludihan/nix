@@ -160,8 +160,10 @@ in
         unzip
         unrar
         zip
-        xarchiver
         sunvox
+        nautilus
+        gst_all_1.gst-plugins-good
+        gst_all_1.gst-plugins-bad
     ];
 
     programs.neovim = {

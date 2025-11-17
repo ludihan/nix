@@ -125,8 +125,6 @@
     };
     security.polkit.enable = true;
     services.gvfs.enable = true;
-    services.tumbler.enable = true;
-
 
     programs.nix-ld.enable = true;
     xdg.portal = {
@@ -137,6 +135,11 @@
     # not present in home manager
     programs.niri.enable = true;
 
+    programs = {
+        nautilus-open-any-terminal.enable = true;
+        nautilus-open-any-terminal.terminal = "foot";
+    };
+
     # theme option does not exist in home manager
     programs.foot = {
         enable = true;
@@ -146,17 +149,6 @@
             resize-by-cells=false;
         };
     };
-    programs.thunar = {
-        enable = true;
-        plugins = with pkgs; [
-            xfce.thunar-archive-plugin
-            xfce.thunar-media-tags-plugin
-            xfce.thunar-volman
-            xarchiver
-        ];
-    };
-    programs.xfconf.enable = true;
-
 
     virtualisation.docker = {
         enable = true;
