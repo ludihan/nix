@@ -76,9 +76,19 @@ in
     };
     programs.nushell = {
         enable = true;
-        configFile.source = "${inputs.self}/config/nushell/config.nu";
+        extraConfig = ''
+            $env.LS_COLORS = (vivid generate gruvbox-dark)
+            $env.config.edit_mode = 'vi'
+            $env.config = {
+                show_banner: false,
+                table: {
+                    header_on_separator: true,
+                    mode: 'single'
+                }
+            }
+        '';
     };
-    programs.carapace.enable = true;
+    # programs.carapace.enable = true;
 
     home = {
         username = "ludihan";
@@ -388,10 +398,7 @@ in
         in {
             nvim.source     = link "nvim";
             niri.source     = link "niri";
-            lf.source       = link "lf";
             npm.source      = link "npm";
-            # nushell.source  = link "nushell";
-            # git.source      = link "git";
         };
     xdg.userDirs = {
         enable = true;
