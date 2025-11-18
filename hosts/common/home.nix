@@ -194,9 +194,11 @@ in
     };
     programs.git = {
         enable = true;
-        settings.user = {
-            name = "ludihan";
-            email = "65617704+ludihan@users.noreply.github.com";
+        settings = {
+            user = {
+                name = "ludihan";
+                email = "65617704+ludihan@users.noreply.github.com";
+            };
             init = {
                 defaultBranch = "main";
             };
