@@ -92,10 +92,9 @@ in
             name = "Adwaita-dark";
             package = pkgs.gnome-themes-extra;
         };
-        iconTheme = {
-            name = "Obsidian-Sand";
-            package = pkgs.iconpack-obsidian;
-        };
+        #iconTheme = {
+            #name = "Obsidian-Sand";
+        #};
         cursorTheme = {
             name = "Adwaita";
         };
@@ -108,9 +107,9 @@ in
     dconf = {
         enable = true;
         settings = {
-            "org/gnome/desktop/background" = {
-                picture-uri-dark = "file://${pkgs.nixos-artwork.wallpapers.nineish-dark-gray.src}";
-            };
+                #"org/gnome/desktop/background" = {
+                #picture-uri-dark = "file://${pkgs.nixos-artwork.wallpapers.nineish-dark-gray.src}";
+            #};
             "org/gnome/desktop/interface" = {
                 color-scheme = "prefer-dark";
             };
@@ -162,6 +161,8 @@ in
         zip
         sunvox
         nautilus
+        papers
+        drawing
         gst_all_1.gst-plugins-good
         gst_all_1.gst-plugins-bad
     ];
@@ -379,17 +380,6 @@ in
         };
     };
 
-    programs.zathura = {
-        enable = true;
-        extraConfig = ''
-        set selection-clipboard clipboard
-        map <C--> zoom out
-        map = zoom in
-        map <Left> navigate previous
-        map <Right> navigate next
-        '';
-    };
-
     xdg.configFile =
         let
             link = name: config.lib.file.mkOutOfStoreSymlink "${inputs.self}/config/${name}";
@@ -404,7 +394,6 @@ in
     xdg.userDirs = {
         enable = true;
         desktop = null;
-        templates = null;
         publicShare = null;
     };
 
