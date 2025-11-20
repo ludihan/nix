@@ -165,16 +165,16 @@
             }
 
             XF86AudioRaiseVolume allow-when-locked=true {
-                spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+";
+                spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+ -l 1";
             }
             XF86AudioLowerVolume allow-when-locked=true {
-                spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-";
+                spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%- -l 1";
             }
             Mod+XF86AudioRaiseVolume allow-when-locked=true {
-                spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 2%+";
+                spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 2%+ -l 1";
             }
             Mod+XF86AudioLowerVolume allow-when-locked=true {
-                spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 2%-";
+                spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 2%- -l 1";
             }
             XF86AudioMute        allow-when-locked=true {
                 spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
