@@ -241,6 +241,7 @@ in
     programs.tmux = {
         enable = true;
         extraConfig = ''
+            set-window-option -g mode-keys vi
             bind C-p swapw -d -t -1
             bind C-n swapw -d -t +1
 

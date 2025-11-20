@@ -167,16 +167,16 @@ binds {
     XF86AudioLowerVolume allow-when-locked=true {
         spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-";
     }
-    Mod+XF86AudioRaiseVolume allow-when-locked=true {
+    Ctrl+XF86AudioRaiseVolume allow-when-locked=true {
         spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 2%+";
     }
-    Mod+XF86AudioLowerVolume allow-when-locked=true {
+    Ctrl+XF86AudioLowerVolume allow-when-locked=true {
         spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 2%-";
     }
     XF86AudioMute        allow-when-locked=true {
         spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
     }
-    Mod+XF86AudioMute        allow-when-locked=true {
+    Ctrl+XF86AudioMute        allow-when-locked=true {
         spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
     }
     XF86AudioMicMute     allow-when-locked=true {
