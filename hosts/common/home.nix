@@ -360,7 +360,6 @@ in
           /* min-height: 0px; */
           padding: 0;
           margin: 0;
-          min-height: 0;
       }
 
       window#waybar {
