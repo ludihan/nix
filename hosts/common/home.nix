@@ -200,7 +200,6 @@
     nixfmt
     nix-output-monitor
     nvd
-    wf-recorder
   ];
 
   programs.firefox.enable = true;
@@ -464,6 +463,19 @@
           background-color: #64727D;
       }
     '';
+  };
+
+  programs.obs-studio = {
+    enable = true;
+
+    plugins = with pkgs.obs-studio-plugins; [
+      wlrobs
+      obs-backgroundremoval
+      obs-pipewire-audio-capture
+      # obs-vaapi #optional AMD hardware acceleration
+      obs-gstreamer
+      obs-vkcapture
+    ];
   };
 
   programs.mpv = {
