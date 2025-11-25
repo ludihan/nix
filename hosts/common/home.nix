@@ -156,9 +156,12 @@
     grim
     slurp
     gcc
-    rustup
-    dotnet-sdk
-    go
+    # rustup
+    # dotnet-sdk
+    # go
+    gopls
+    nil
+    rust-analyzer
     godot
     nodejs
     python3
@@ -179,7 +182,7 @@
     gnome-text-editor
     nautilus
     krita
-    love
+    # love
     mednafen
     swaybg
     lf
