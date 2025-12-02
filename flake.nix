@@ -7,6 +7,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    templates.url = "github:nixos/templates";
   };
 
   outputs =
@@ -61,5 +62,6 @@
           ];
         };
       };
+      inherit (inputs) templates;
     };
 }

@@ -39,7 +39,23 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "templates": "templates"
+      }
+    },
+    "templates": {
+      "locked": {
+        "lastModified": 1760444628,
+        "narHash": "sha256-wkIx1uPjYVOOcho0SAknX3tw2U8vswKwC/uZ3U0HAxE=",
+        "owner": "nixos",
+        "repo": "templates",
+        "rev": "2557dc639215476df149ae6842a1ae94d60a884c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "templates",
+        "type": "github"
       }
     }
   },
