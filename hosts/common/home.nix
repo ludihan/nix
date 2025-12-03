@@ -204,6 +204,7 @@
     ffmpegthumbnailer
     quickshell
     nixfmt
+    nixfmt-tree
     nix-output-monitor
     nvd
     wl-mirror
