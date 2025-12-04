@@ -208,6 +208,11 @@
     nix-output-monitor
     nvd
     wl-mirror
+    reaper
+    vital
+    cmus
+    kew
+    nicotine-plus
   ];
 
   programs.firefox.enable = true;
